@@ -3,166 +3,340 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PureScale - Remarkable from Every Side</title>
+
+<title>Sitara Digital</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-body{color:#e6edf3;scroll-behavior:smooth;background:#0b0f19;}
-.topbar{background:#0f1626;padding:8px;text-align:center;font-size:14px;color:#9fb3c8;}
-header{display:flex;justify-content:space-between;align-items:center;padding:15px 40px;position:fixed;width:100%;top:30px;background:rgba(10,15,25,0.7);backdrop-filter:blur(10px);z-index:1000;border-bottom:1px solid #1f2a44;}
-header h2{color:#4da3ff;}
-nav a{color:#c9d6e2;margin:0 10px;text-decoration:none;transition:0.3s;}
-nav a:hover{color:#4da3ff;}
-.hero{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:20px;}
-.hero h1{font-size:3.2rem;color:#ffffff;}
-.hero h2{color:#4da3ff;margin:10px 0;}
-.hero p{max-width:600px;margin:15px 0;color:#9fb3c8;}
-.btn{padding:12px 28px;margin:10px;border:none;border-radius:30px;background:#4da3ff;color:#fff;cursor:pointer;transition:0.3s;}
-.btn:hover{background:#3b8ce0;transform:scale(1.05);}
-.section{padding:80px 20px;text-align:center;background:#121a2b;margin:20px;border-radius:16px;}
-.section h2{color:#4da3ff;margin-bottom:15px;}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin-top:30px;}
-.card{background:#18233a;padding:20px;border-radius:12px;transition:0.3s;}
-.card:hover{transform:translateY(-8px);background:#1f2e4d;}
-.business-card{margin-top:20px;padding:20px;background:#18233a;border-radius:12px;}
-.business-card a{color:#4da3ff;text-decoration:none;}
-input,textarea{width:100%;padding:12px;margin:10px 0;border-radius:8px;border:none;background:#1a253d;color:#fff;}
-footer{padding:30px;background:#0f1626;text-align:center;margin-top:20px;}
-.socials a{margin:0 10px;color:#4da3ff;text-decoration:none;}
-.socials a:hover{text-decoration:underline;}
+
+body{
+color:#eee;
+background:linear-gradient(135deg,#0d061a,#1a0d2e);
+scroll-behavior:smooth;
+}
+
+/* TOP BAR */
+.topbar{
+background:#140a24;
+padding:8px;
+text-align:center;
+font-size:14px;
+color:#cbb7ff;
+}
+
+/* HEADER */
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+position:fixed;
+width:100%;
+top:30px;
+background:rgba(20,10,36,0.85);
+backdrop-filter:blur(10px);
+z-index:1000;
+border-bottom:1px solid #2a1d4d;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.logo img{
+width:45px;
+}
+
+.logo h2{
+color:#c084ff;
+}
+
+nav a{
+color:#ddd;
+margin:0 10px;
+text-decoration:none;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#c084ff;
+}
+
+/* HERO */
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.hero h1{
+font-size:3rem;
+}
+
+.hero h2{
+color:#c084ff;
+margin:10px 0;
+}
+
+.hero p{
+max-width:600px;
+margin:15px 0;
+color:#bbb;
+}
+
+/* BUTTON */
+.btn{
+padding:12px 28px;
+margin:10px;
+border:none;
+border-radius:30px;
+background:linear-gradient(45deg,#a855f7,#7c3aed);
+color:#fff;
+cursor:pointer;
+transition:0.3s;
+}
+
+.btn:hover{
+transform:scale(1.05);
+opacity:0.9;
+}
+
+/* SECTIONS */
+.section{
+padding:80px 20px;
+text-align:center;
+background:#140a24;
+margin:20px;
+border-radius:16px;
+}
+
+.section h2{
+color:#c084ff;
+margin-bottom:15px;
+}
+
+/* CARDS */
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+margin-top:30px;
+}
+
+.card{
+background:#1e1035;
+padding:20px;
+border-radius:12px;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+background:#2a1a4a;
+}
+
+/* PORTFOLIO */
+.portfolio-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+margin-top:30px;
+}
+
+.portfolio-item img{
+width:100%;
+border-radius:10px;
+}
+
+/* FORM */
+input,textarea{
+width:100%;
+padding:12px;
+margin:10px 0;
+border-radius:8px;
+border:none;
+background:#1e1035;
+color:#fff;
+}
+
+/* FOOTER */
+footer{
+padding:30px;
+background:#0f071a;
+text-align:center;
+margin-top:20px;
+}
+
+.socials a{
+margin:0 10px;
+color:#c084ff;
+text-decoration:none;
+}
 </style>
 </head>
+
 <body>
 
-<div class="topbar">📞 +91 79760 76544 | ✉️  https://codedbymuskan-dot.github.io/purescale.com</div>
+<div class="topbar">📞 +91 79760 76544 | ✉️ yourmail@gmail.com</div>
 
 <header>
-<h2>PureScale</h2>
+<div class="logo">
+<img src="sitara-logo.png" alt="logo">
+<h2>Sitara Digital</h2>
+</div>
+
 <nav>
 <a href="#">Home</a>
 <a href="#about">About</a>
 <a href="#services">Services</a>
+<a href="#process">Process</a>
 <a href="#portfolio">Work</a>
-<a href="#proof">Proof</a>
-<a href="#card">Business Card</a>
 <a href="#contact">Contact</a>
 </nav>
 </header>
 
+<!-- HERO -->
 <section class="hero">
-<h1>Scale Your Brand Amplify Your Presence</h1>
-<h2>Remarkable from Every Side</h2>
-<p>We help brands grow online with powerful strategies, creativity, and data-driven marketing.</p>
+<h1>Shining Brands in the Digital Universe</h1>
+<h2>Grow. Scale. Dominate.</h2>
+<p>We help brands grow with strategy, creativity, and performance marketing.</p>
 <button class="btn" onclick="go('contact')">Get Started</button>
-<button class="btn" onclick="go('contact')">Book Free Consultation</button>
 </section>
 
+<!-- ABOUT -->
 <section id="about" class="section">
-<h2>About PureScale</h2>
-<p>PureScale is a modern digital marketing agency built for businesses that want real growth—not just promises.</p>
-<p>✔ Fresh Ideas | ✔ Latest Strategies | ✔ Personalized Attention</p>
+<h2>About Sitara Digital</h2>
+
+<p>At Sitara Digital, we don’t just market brands — we build their presence in the digital universe.</p>
+
+<p>
+We focus on strategy, creativity, and consistency to help businesses grow step by step.
+Even as a growing agency, our approach is based on real-world marketing principles and continuous learning.
+</p>
+
+<p>✔ Smart Strategies | ✔ Creative Execution | ✔ Real Growth Focus</p>
+
+<p style="margin-top:15px;">
+We believe every brand has the potential to shine — it just needs the right direction.
+</p>
 </section>
 
+<!-- SERVICES -->
 <section id="services" class="section">
 <h2>Services</h2>
+
 <div class="cards">
-<div class="card">SEO Optimization<br><small>Improve search rankings</small></div>
-<div class="card">Social Media Marketing<br><small>Grow your audience</small></div>
-<div class="card">Google Ads / PPC<br><small>Boost ROI</small></div>
-<div class="card">Website Development<br><small>High converting sites</small></div>
-<div class="card">Content Marketing<br><small>Build authority</small></div>
-<div class="card">Branding & Strategy<br><small>Create strong identity</small></div>
-<!-- <div class="card">Google My Business[GMB] Setup<br><small>Get your business visible on Google Maps</small></div> -->
-<!-- <div class="card">GMB Management<br><small>optimise or Manage your local presence</small></div> -->
-<!-- <div class="card">Social Media Handling<br><small>Content posting, engagement & growth</small></div> -->
-<div class="card">GMB Setup<br><small>Google Maps visibility</small></div>
-<div class="card">GMB Management<br><small>Local presence optimization</small></div>
-<div class="card">Social Media Handling<br><small>Posts, engagement & growth</small></div>
-<div class="card">Digital Business Card<br><small>Modern Interactive identity card</small></div>
+
+<div class="card"><strong>SEO Optimization</strong><br><small>Improve your rankings and bring organic traffic.</small></div>
+
+<div class="card"><strong>Social Media Marketing</strong><br><small>Grow your brand and audience engagement.</small></div>
+
+<div class="card"><strong>Google Ads</strong><br><small>Generate leads with targeted campaigns.</small></div>
+
+<div class="card"><strong>Website Development</strong><br><small>Create modern and high-converting websites.</small></div>
+
+<div class="card"><strong>Branding</strong><br><small>Build a strong and unique identity.</small></div>
+
+<div class="card"><strong>GMB Optimization</strong><br><small>Boost visibility on Google Maps.</small></div>
+
 </div>
 </section>
 
-<section id="portfolio" class="section">
-<h2>Our Work & Approach</h2>
-<p>Sample campaigns, demo projects, and strategy-based work to showcase our approach.</p>
-</section>
-
-<section id="proof" class="section">
+<!-- PROCESS -->
+<section id="process" class="section">
 <h2>How We Deliver Results</h2>
-<p>We follow a clear and proven process to help businesses grow step by step:</p>
 
 <div class="cards">
-<div class="card">
-<h3>Step 1: Research</h3>
-<p>Understanding your business, audience, and competitors deeply.</p>
-</div>
-<div class="card">
-<h3>Step 2: Strategy</h3>
-<p>Creating a customized growth plan based on real data.</p>
-</div>
-<div class="card">
-<h3>Step 3: Execution</h3>
-<p>Implementing marketing campaigns with precision.</p>
-</div>
-<div class="card">
-<h3>Step 4: Optimization</h3>
-<p>Continuously improving performance for better results.</p>
-</div>
-</div>
 
-<p style="margin-top:20px;">
-<strong>Built for Growth, Ready for Results</strong><br>
-We may be new, but our approach is based on proven marketing principles and continuous learning.
-</p>
+<div class="card"><h3>Research</h3><p>Understand your market and audience.</p></div>
+
+<div class="card"><h3>Strategy</h3><p>Create a customized growth plan.</p></div>
+
+<div class="card"><h3>Execution</h3><p>Implement campaigns effectively.</p></div>
+
+<div class="card"><h3>Optimization</h3><p>Improve results continuously.</p></div>
+
+</div>
 
 <button class="btn" onclick="go('contact')">Start Your Growth Journey</button>
 </section>
 
-<section id="card" class="section">
-<h2>My Digital Business Card</h2>
-<div class="business-card">
-<p><strong>Muskan Gangwani - Digital Marketer</strong></p>
-<p>PureScale Agency</p>
-<p>📞 +91 79760 76544</p>
+<!-- PORTFOLIO -->
+<section id="portfolio" class="section">
+<h2>Our Work</h2>
+
 <p>
-👉 <a href="https://your-digital-card-link.com" target="_blank">
-Open My Digital Business Card
-</a>
+We are actively building and refining our work to deliver the best results for our clients.
 </p>
-</div>
+
+<p>
+This space will showcase our projects and success stories as we grow.
+</p>
+
+<p style="margin-top:15px;">✨ Your brand could be our next success story.</p>
+
+<div class="portfolio-grid"></div>
 </section>
 
+<!-- CONTACT -->
 <section id="contact" class="section">
-<h2>Let’s Talk Growth</h2>
-<form onsubmit="submitForm(event)">
-<input type="text" placeholder="Name" required><br>
-<input type="email" placeholder="Email" required><br>
-<textarea placeholder="Message" required></textarea><br>
-<button class="btn">Send</button>
+<h2>Contact Us</h2>
+
+<form onsubmit="sendToWhatsApp(event)">
+<input type="text" id="name" placeholder="Your Name" required>
+<input type="email" id="email" placeholder="Your Email" required>
+<textarea id="message" placeholder="Your Message" required></textarea>
+<button class="btn">Send Message</button>
 </form>
 
+</section>
+
+<!-- CONNECT -->
+<section class="section">
+<h2>Connect With Us</h2>
+
 <div class="socials">
-<p>Connect with us:</p>
 <a href="https://instagram.com/yourusername" target="_blank">Instagram</a>
 <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
 <a href="https://twitter.com/yourhandle" target="_blank">Twitter</a>
-<a href="https://your-digital-card-link.com" target="_blank">Business Card</a>
 </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
-<p>PureScale - Remarkable from Every Side</p>
-<p>📍 Ajmer | 📞 +91 79760 76544 | ✉️  https://codedbymuskan-dot.github.io/purescale.com</p>
-<div class="socials">
-<a href="#">Instagram</a>
-<a href="#">LinkedIn</a>
-<a href="#">Twitter</a>
-</div>
+<p>© Sitara Digital</p>
+<p>Shining Brands in the Digital Universe ✨</p>
 </footer>
 
 <script>
-function go(id){document.getElementById(id).scrollIntoView({behavior:'smooth'});}
-function submitForm(e){e.preventDefault();alert('Message sent successfully!');}
+function go(id){
+document.getElementById(id).scrollIntoView({behavior:'smooth'});
+}
+
+function sendToWhatsApp(e){
+e.preventDefault();
+
+const name = document.getElementById("name").value;
+const email = document.getElementById("email").value;
+const message = document.getElementById("message").value;
+
+const phoneNumber = "91XXXXXXXXXX";
+
+const url = `https://wa.me/${phoneNumber}?text=
+Name: ${name}%0A
+Email: ${email}%0A
+Message: ${message}`;
+
+window.open(url, "_blank");
+}
 </script>
 
 </body>
