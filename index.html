@@ -176,7 +176,7 @@
         /* ============================================
            TOP BAR
         ============================================ */
-        .top-bar {
+         .top-bar {
             background: rgba(26,10,46,0.8);
             backdrop-filter: blur(10px);
             padding: 10px 0;
@@ -212,14 +212,15 @@
             background: linear-gradient(90deg, transparent, var(--accent-purple), var(--accent-pink), transparent);
             animation: glowPulse 3s ease-in-out infinite;
         }
-        @keyframes glowPulse { 0%,100% { opacity: 0.5; } 50% { opacity: 1; } }
+        @keyframes glowPulse { 0%,100% { opacity: 0.5; } 50% { opacity: 1; } } 
 
+        
         /* ============================================
            HEADER / NAVBAR
         ============================================ */
         .header {
             position: fixed;
-            top: 0; left: 0;
+            top: 50px; left: 0;
             width: 100%;
             z-index: 1000;
             padding: 15px 0;
@@ -942,6 +943,93 @@
             .about-badge-top, .about-badge-bottom { display: none; }
             .whyus-badge-float { display: none; }
         }
+        @media (max-width: 640px) {
+    .top-bar-content {
+        flex-direction: column;
+        }
+
+    .header {
+        top: 70px;
+       }
+}
+        
+
+/* GLOBAL IMPROVEMENTS */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+button, a {
+    min-height: 44px;
+}
+
+/* SECTION SPACING FIX */
+@media (max-width: 768px) {
+    section {
+        padding: 60px 15px;
+    }
+}
+
+/* CARD PADDING FIX */
+@media (max-width: 768px) {
+    .service-card {
+        padding: 25px 20px;
+    }
+}
+
+/* RESPONSIVE FONT IMPROVEMENT */
+body {
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+}
+
+/* NAVBAR MOBILE IMPROVEMENT */
+@media (max-width: 900px) {
+    .nav-links {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* BUTTON FULL WIDTH MOBILE */
+@media (max-width: 768px) {
+    .btn {
+        width: 100%;
+    }
+}
+
+/* PERFORMANCE OPTIMIZATION (REMOVE HEAVY ANIMATIONS ON MOBILE) */
+@media (max-width: 768px) {
+    .floating-shape,
+    .floating-orb {
+        display: none;
+    }
+}
+
+/* EXTRA BREAKPOINTS */
+@media (max-width: 1024px) {
+    .services-grid,
+    .portfolio-grid,
+    .testi-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .services-grid,
+    .portfolio-grid,
+    .testi-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
+<!-- NOTE:
+1. Keep your original HTML + CSS
+2. Paste this code at the END of your CSS
+3. It will override old styles automatically
+-->
+
     </style>
 </head>
 <body>
@@ -983,7 +1071,7 @@
             </a>
             <a class="top-bar-item" href="mailto:7976076544.sitaradigitals@gmail.com">
                 <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                7976076544.sitaradigitals@gmail.com
+                mn.sitaradigitals@gmail.com
             </a>
         </div>
         <div class="top-bar-glow"></div>
@@ -1481,7 +1569,7 @@
                             </div>
                             <div class="contact-item-text">
                                 <h4>Email</h4>
-                                <p>7976076544.sitaradigitals@gmail.com</p>
+                                <p>mn.sitaradigitals@gmail.com</p>
                             </div>
                         </div>
                         <div class="contact-item">
@@ -1545,7 +1633,7 @@
                 <div class="footer-logo-text">Sitara Digitals</div>
             </div>
             <p class="footer-tagline">Shining Brands in the Digital Universe ✨</p>
-            <p class="footer-copyright">© 2025 Sitara Digitals · Ajmer, Rajasthan · All rights reserved.</p>
+            <p class="footer-copyright">© 2026 Sitara Digitals · Ajmer, Rajasthan · </p>
         </div>
     </footer>
 
@@ -1694,6 +1782,7 @@
             once: true,
             offset: 80
         });
+        
     </script>
 </body>
 </html>
