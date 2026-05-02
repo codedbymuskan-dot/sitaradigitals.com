@@ -173,54 +173,14 @@
             100% { transform: perspective(500px) rotateX(60deg) translateY(50px); }
         }
 
-        /* ============================================
-           TOP BAR
-        ============================================ */
-         .top-bar {
-            background: rgba(26,10,46,0.8);
-            backdrop-filter: blur(10px);
-            padding: 10px 0;
-            border-bottom: 1px solid var(--glass-border);
-            position: relative;
-            z-index: 100;
-        }
-        .top-bar-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        .top-bar-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        .top-bar-item:hover { color: var(--accent-purple); }
-        .top-bar-item svg { width: 16px; height: 16px; fill: currentColor; }
-        .top-bar-glow {
-            position: absolute;
-            bottom: 0; left: 0;
-            width: 100%; height: 1px;
-            background: linear-gradient(90deg, transparent, var(--accent-purple), var(--accent-pink), transparent);
-            animation: glowPulse 3s ease-in-out infinite;
-        }
-        @keyframes glowPulse { 0%,100% { opacity: 0.5; } 50% { opacity: 1; } } 
+        /* Top Bar removed */
 
-        
         /* ============================================
            HEADER / NAVBAR
         ============================================ */
         .header {
             position: fixed;
-            top: 50px; left: 0;
+            top: 0; left: 0;
             width: 100%;
             z-index: 1000;
             padding: 15px 0;
@@ -390,7 +350,7 @@
         .hero {
             min-height: 100vh;
             display: flex; align-items: center; justify-content: center;
-            position: relative; padding-top: 140px; overflow: hidden;
+            position: relative; padding-top: 100px; overflow: hidden;
             text-align: center;
         }
         .hero-content { position: relative; z-index: 10; max-width: 900px; }
@@ -909,6 +869,23 @@
         /* ============================================
            RESPONSIVE STYLES
         ============================================ */
+
+        /* Prevent any horizontal overflow globally */
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        img, svg, video, iframe {
+            max-width: 100%;
+        }
+
         @media (max-width: 1100px) {
             .services-grid { grid-template-columns: repeat(2,1fr); }
             .portfolio-grid { grid-template-columns: repeat(2,1fr); }
@@ -932,104 +909,61 @@
             .hamburger { display: flex; }
         }
         @media (max-width: 640px) {
-            section { padding: 80px 20px; }
+            section { padding: 70px 16px; }
+            .container { padding-left: 16px; padding-right: 16px; }
             .services-grid, .portfolio-grid, .testi-grid { grid-template-columns: 1fr; }
             .about-stats { grid-template-columns: 1fr; }
             .hero-buttons { flex-direction: column; width: 100%; padding: 0 16px; }
             .btn { width: 100%; justify-content: center; }
-            .contact-form-container { padding: 30px 20px; }
-            .top-bar-content { justify-content: center; }
+            .contact-form-container { padding: 30px 16px; }
             .cursor, .cursor-dot { display: none; }
             .about-badge-top, .about-badge-bottom { display: none; }
             .whyus-badge-float { display: none; }
+
+            /* Prevent floating shapes from causing overflow */
+            .hero-3d-container { overflow: hidden; }
+            .floating-shape { max-width: 80px; max-height: 80px; }
+            .shape-1, .shape-5 { left: 2%; }
+            .shape-2, .shape-4 { right: 2%; }
+
+            /* Fix nav inner padding on small screens */
+            .nav-inner { padding: 0 16px; }
+
+            /* Ticker fix */
+            .ticker-wrap { overflow: hidden; }
+
+            /* Logo text size */
+            .logo-name { font-size: 1.1rem; }
+            .logo-img { width: 36px; height: 36px; }
+
+            /* Section title size */
+            .section-title { font-size: clamp(1.6rem, 6vw, 2.5rem); }
+            .hero-title { font-size: clamp(2rem, 9vw, 3.5rem); }
+
+            /* Portfolio filter wrap */
+            .portfolio-filter { flex-wrap: wrap; gap: 8px; justify-content: center; }
+            .filter-btn { font-size: 0.78rem; padding: 7px 14px; }
+
+            /* Process steps */
+            .process-step { flex-direction: column; gap: 12px; }
+
+            /* Contact grid */
+            .contact-grid { grid-template-columns: 1fr; }
+
+            /* Why us grid */
+            .whyus-features { grid-template-columns: 1fr; }
+
+            /* CTA section */
+            .cta-section { padding: 60px 16px; }
         }
-        @media (max-width: 640px) {
-    .top-bar-content {
-        flex-direction: column;
+
+        @media (max-width: 400px) {
+            .hero-title { font-size: clamp(1.8rem, 10vw, 2.8rem); }
+            .logo-name { font-size: 1rem; }
+            .nav-inner { padding: 0 12px; }
+            section { padding: 60px 12px; }
+            .container { padding-left: 12px; padding-right: 12px; }
         }
-
-    .header {
-        top: 70px;
-       }
-}
-        
-
-/* GLOBAL IMPROVEMENTS */
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-button, a {
-    min-height: 44px;
-}
-
-/* SECTION SPACING FIX */
-@media (max-width: 768px) {
-    section {
-        padding: 60px 15px;
-    }
-}
-
-/* CARD PADDING FIX */
-@media (max-width: 768px) {
-    .service-card {
-        padding: 25px 20px;
-    }
-}
-
-/* RESPONSIVE FONT IMPROVEMENT */
-body {
-    font-size: clamp(0.9rem, 2vw, 1.1rem);
-}
-
-/* NAVBAR MOBILE IMPROVEMENT */
-@media (max-width: 900px) {
-    .nav-links {
-        width: 100%;
-        text-align: center;
-    }
-}
-
-/* BUTTON FULL WIDTH MOBILE */
-@media (max-width: 768px) {
-    .btn {
-        width: 100%;
-    }
-}
-
-/* PERFORMANCE OPTIMIZATION (REMOVE HEAVY ANIMATIONS ON MOBILE) */
-@media (max-width: 768px) {
-    .floating-shape,
-    .floating-orb {
-        display: none;
-    }
-}
-
-/* EXTRA BREAKPOINTS */
-@media (max-width: 1024px) {
-    .services-grid,
-    .portfolio-grid,
-    .testi-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 480px) {
-    .services-grid,
-    .portfolio-grid,
-    .testi-grid {
-        grid-template-columns: 1fr;
-    }
-}
-</style>
-
-<!-- NOTE:
-1. Keep your original HTML + CSS
-2. Paste this code at the END of your CSS
-3. It will override old styles automatically
--->
-
     </style>
 </head>
 <body>
@@ -1061,21 +995,6 @@ body {
         <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.554 4.118 1.524 5.849L.054 23.27a.75.75 0 0 0 .916.99l5.635-1.476A11.944 11.944 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22.001A9.979 9.979 0 0 1 6.36 20.22l-.38-.227-3.944 1.034 1.053-3.836-.249-.396A9.955 9.955 0 0 1 2 12c0-5.514 4.486-10 10-10s10 4.486 10 10-4.486 10-10 10z"/></svg>
         <span class="wa-tooltip">Chat with us!</span>
     </a>
-
-    <!-- Top Bar -->
-    <div class="top-bar">
-        <div class="top-bar-content">
-            <a class="top-bar-item" href="tel:+917976076544">
-                <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-                +91 79760 76544
-            </a>
-            <a class="top-bar-item" href="mailto:7976076544.sitaradigitals@gmail.com">
-                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                mn.sitaradigitals@gmail.com
-            </a>
-        </div>
-        <div class="top-bar-glow"></div>
-    </div>
 
     <!-- Header / Navbar -->
     <header class="header" id="header">
@@ -1782,7 +1701,6 @@ body {
             once: true,
             offset: 80
         });
-        
     </script>
 </body>
 </html>
